@@ -1,0 +1,473 @@
+/* ANIMATIONS */
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(30deg); }
+  100% { transform: rotate(210deg); }
+}
+@keyframes spin2 {
+  0%   { transform: rotate(150deg); }
+  100% { transform: rotate(330deg); }
+}
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   body {
+     background-color: #eee;
+   }
+   #container{position:relative;z-index:500;}
+   .colorblock{
+     position:absolute;
+     top:0px;
+     width:100vw;
+     height:100vh;
+     background: #fbc93d;
+     overflow: hidden;
+     z-index:-50;
+   }
+   .colorblock:after{
+       content: "";
+       display: block;
+       position: absolute;
+       top: -40px; right: -40px; bottom: -40px; left: -40px;
+       background: rgba(255,255,255,0.08);
+       transform: rotate(30deg);
+       animation: spin 60s infinite linear;
+       z-index:-50;
+   }
+   .colorblock:before{
+       content: "";
+       display: block;
+       position: absolute;
+       top: -40px; right: -40px; bottom: -40px; left: -40px;
+       background: rgba(255,255,255,0.08);
+       transform: rotate(150deg);
+       animation: spin2 50s infinite linear;
+      z-index:-50;
+   }
+   @media screen and (max-width: 510px) {
+    #cdrive {
+        visibility:hidden;
+    }
+}
+   .about{
+     text-align:center;
+     font-family: 'Fredoka One', cursive;
+     font-size:16px;
+     width:110px;
+     margin:0 auto;
+     padding:0px;
+   }
+   #pika{
+     width:400px;
+     position:absolute;
+     bottom:10px;
+     right:10px;
+   }
+   @media screen and (max-height:650px){
+    #pika{
+      opacity:0.3;
+      width:200px;
+    }
+
+   }
+    #aboutlink{
+      text-decoration: none;
+      font-size:0.9em;
+      margin-top:500px;
+      color:white;
+      cursor:pointer;
+    }
+
+   .form-signin {
+     max-width: 430px;
+     padding: 15px;
+     margin: 0 auto;
+   }
+
+   .form-signin .form-signin-heading,
+   .form-signin .checkbox {
+     margin-bottom: 10px;
+   }
+   .form-signin .checkbox {
+     font-weight: normal;
+   }
+   .form-signin .form-control {
+     position: relative;
+     height: auto;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+     padding: 10px;
+     font-size: 16px;
+   }
+   .form-signin .form-control:focus {
+     z-index: 2;
+   }
+   .form-signin input[type="email"] {
+     margin-bottom: -1px;
+     border-bottom-right-radius: 0;
+     border-bottom-left-radius: 0;
+   }
+   .form-signin input[type="password"] {
+     margin-bottom: 10px;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+   }
+
+   .btn-file {
+       position: relative;
+       overflow: hidden;
+   }
+   .btn-file input[type=file] {
+       position: absolute;
+       top: 0;
+       right: 0;
+       min-width: 100%;
+       min-height: 100%;
+       font-size: 100px;
+       text-align: right;
+       filter: alpha(opacity=0);
+       opacity: 0;
+       outline: none;
+       background: white;
+       cursor: inherit;
+       display: block;
+   }
+   #headerlink{
+     text-decoration: none;
+     color:inherit;
+     max-width:300px;
+   }
+
+   #aboutlink:after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid white;
+    width: 0;
+    -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+    }
+    #aboutlink:hover:after {
+      width: 100%;
+    }
+
+   .thumbs{
+     display:inline-block;
+     float:left;
+     opacity:0.6;
+     height:60px;
+     width:60px;
+
+   }
+
+   .thumbs:hover{
+     opacity:1.0;
+   }
+
+   #header{
+     text-align:center;
+     color:white;
+     font-size:62px;
+     margin-bottom:50px;
+     font-family: 'Fredoka One', cursive;
+     height:70px;
+   }
+   @media screen and (max-width: 510px) {
+    #headerlink {
+        font-size:30px;
+        height:20px;
+    }
+}
+   #filename #success-message{
+     text-align:center;
+     font-family: 'Fredoka One', cursive;
+   }
+
+   #aboutdiv{
+     display:none;
+   }
+   #backbutton{
+     cursor:pointer;
+   }
+   #social{
+     margin:0 auto;
+     margin-top:100px;
+     margin-bottom:10px;
+   }
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
